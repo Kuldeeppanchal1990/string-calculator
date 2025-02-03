@@ -22,10 +22,20 @@ public class StringCalculator {
         int sum = 0;
         for(String no : nos) {
             int n = Integer.valueOf(no);
+            if (n<0) {
+                throw new InvalidNumberException("Negative numbers are invalid");
+            }
             sum+=n;
         }
 
         return sum;
 
+    }
+
+    public class InvalidNumberException extends RuntimeException {
+
+        public InvalidNumberException(String message) {
+            super(message);
+        }
     }
 }

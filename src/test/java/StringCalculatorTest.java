@@ -6,6 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class StringCalculatorTest {
 
@@ -46,6 +47,14 @@ public class StringCalculatorTest {
     @CsvSource(value = {"'//;\n1;2;3':6","'//!\n3!2':5"}, delimiter = ':')
     public void returnSum_WhenCustomDelimiterIsUsed(String input, int expectedResult) {
         assertEquals(expectedResult, stringCalculator.calculate(input));
+    }
+
+    @Test
+    public void throwsException_WhenNegativeNoIsPassed() {
+        Exception exception = assertThrows(StringCalculator.InvalidNumberException.class, () -> {
+            stringCalculator.calculate("-2");
+        });
+        assertEquals("Negative numbers are invalid", exception.getMessage());
     }
 
 }
