@@ -57,4 +57,11 @@ public class StringCalculatorTest {
         assertEquals("Negative numbers are invalid", exception.getMessage());
     }
 
+    @Test
+    public void throwsException_WhenNegativeMultipleNosArePassed() {
+        Exception exception = assertThrows(StringCalculator.InvalidNumberException.class, () -> {
+            stringCalculator.calculate("-2,1,-6");
+        });
+        assertEquals("Negative numbers are invalid", exception.getMessage());
+    }
 }
