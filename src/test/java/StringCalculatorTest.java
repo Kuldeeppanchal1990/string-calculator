@@ -28,6 +28,6 @@ public class StringCalculatorTest {
     public void returnSum_WhenTwoCommaSeparatedNosPassed() {
         assertEquals(3,stringCalculator.calculate("1,2"));
     }
-    
+
 
 }
