@@ -4,6 +4,12 @@ public class StringCalculator {
 
 
     public int calculate(String number) {
-        return 0;
+
+        int n = Integer.valueOf(number);
+        if (n>0) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }

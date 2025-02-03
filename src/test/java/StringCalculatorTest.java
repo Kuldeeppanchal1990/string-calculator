@@ -12,4 +12,11 @@ public class StringCalculatorTest {
         int result = stringCalculator.calculate("0");
         assertEquals(0,result);
     }
+
+    @Test
+    public void returnOne_WhenOneIsPassed() {
+        StringCalculator stringCalculator = new StringCalculator();
+        int result = stringCalculator.calculate("1");
+        assertEquals(1, result);
+    }
 }
