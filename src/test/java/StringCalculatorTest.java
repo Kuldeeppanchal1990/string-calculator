@@ -42,4 +42,10 @@ public class StringCalculatorTest {
         assertEquals(expectedResult, stringCalculator.calculate(input));
     }
 
+    @ParameterizedTest
+    @CsvSource(value = {"'//;\n1;2;3':6","'//!\n3!2':5"}, delimiter = ':')
+    public void returnSum_WhenCustomDelimiterIsUsed(String input, int expectedResult) {
+        assertEquals(expectedResult, stringCalculator.calculate(input));
+    }
+
 }
