@@ -1,22 +1,26 @@
 import org.incubyte.StringCalculator;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StringCalculatorTest {
 
+    private StringCalculator stringCalculator;
+
+    @BeforeEach
+    public void before() {
+        stringCalculator = new StringCalculator();
+    }
+
     @Test
     public void returnZero_WhenZeroIsPassed() {
-        StringCalculator stringCalculator = new StringCalculator();
-        int result = stringCalculator.calculate("0");
-        assertEquals(0,result);
+        assertEquals(0,stringCalculator.calculate("0"));
     }
 
     @Test
     public void returnOne_WhenOneIsPassed() {
-        StringCalculator stringCalculator = new StringCalculator();
-        int result = stringCalculator.calculate("1");
-        assertEquals(1, result);
+        assertEquals(1, stringCalculator.calculate("1"));
     }
 }
