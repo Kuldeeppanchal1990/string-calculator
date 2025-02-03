@@ -5,11 +5,15 @@ public class StringCalculator {
 
     public int calculate(String number) {
 
-        int n = Integer.valueOf(number);
-        if (n>0) {
-            return 1;
-        } else {
-            return 0;
+        String[] nos = number.split(",");
+
+        int sum = 0;
+        for(String no : nos) {
+            int n = Integer.valueOf(no);
+            sum+=n;
         }
+
+        return sum;
+
     }
 }

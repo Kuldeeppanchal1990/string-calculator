@@ -23,4 +23,11 @@ public class StringCalculatorTest {
     public void returnOne_WhenOneIsPassed() {
         assertEquals(1, stringCalculator.calculate("1"));
     }
+
+    @Test
+    public void returnSum_WhenTwoCommaSeparatedNosPassed() {
+        assertEquals(3,stringCalculator.calculate("1,2"));
+    }
+    
+
 }
